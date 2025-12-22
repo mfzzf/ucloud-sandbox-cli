@@ -59,12 +59,12 @@ async function addMakefileScripts(
     }
 
     const makefileContent = `
-.PHONY: sandbox:build:dev
-sandbox:build:dev:
+.PHONY: sandbox-build-dev
+sandbox-build-dev:
 \t${cdPrefix}python ${files.buildDevFile}
 
-.PHONY: sandbox:build:prod
-sandbox:build:prod:
+.PHONY: sandbox-build-prod
+sandbox-build-prod:
 \t${cdPrefix}python ${files.buildProdFile}
 `
 
@@ -79,10 +79,10 @@ sandbox:build:prod:
 
     console.log('\n📝 Added build scripts to Makefile:')
     console.log(
-      `   ${asPrimary('make sandbox:build:dev')} - Build development template`
+      `   ${asPrimary('make sandbox-build-dev')} - Build development template`
     )
     console.log(
-      `   ${asPrimary('make sandbox:build:prod')} - Build production template`
+      `   ${asPrimary('make sandbox-build-prod')} - Build production template`
     )
   } catch (err) {
     console.warn(
@@ -310,10 +310,10 @@ export const initCommand = new commander.Command('init')
               `   ${asPrimary('pip install ucloud_sandbox')} (install SDK dependency)`
             )
             console.log(
-              `   ${asPrimary('make sandbox:build:dev')} (for development)`
+              `   ${asPrimary('make sandbox-build-dev')} (for development)`
             )
             console.log(
-              `   ${asPrimary('make sandbox:build:prod')} (for production)`
+              `   ${asPrimary('make sandbox-build-prod')} (for production)`
             )
             break
           default:

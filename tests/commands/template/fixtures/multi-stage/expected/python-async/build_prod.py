@@ -1,6 +1,6 @@
 import asyncio
 from ucloud_sandbox import AsyncTemplate, default_build_logger
-from .template import template
+from template import template
 
 
 async def main():

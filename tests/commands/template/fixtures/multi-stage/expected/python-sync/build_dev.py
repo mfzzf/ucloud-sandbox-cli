@@ -1,5 +1,5 @@
 from ucloud_sandbox import Template, default_build_logger
-from .template import template
+from template import template
 
 
 if __name__ == "__main__":
